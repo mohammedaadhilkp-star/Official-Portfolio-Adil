@@ -94,3 +94,9 @@ html.preloader-active{overflow:hidden;background:#fff}
 .welcome-skip{right:28px;top:50%;bottom:auto;transform:translateY(-50%);opacity:1;color:#999;background:none;border:none;box-shadow:none;font-size:28px;font-weight:400;line-height:1;padding:12px;outline:none;-webkit-text-stroke:0}
 .welcome-skip:focus-visible{outline:none;color:#444}
 .welcome-leaving .welcome-skip{opacity:0}
+
+.footer-socials{display:flex;flex-wrap:wrap;gap:20px;align-items:center;grid-column:1/-1;padding:16px 0}
+.social-link{display:inline-flex;align-items:center;gap:9px;font-size:13px;padding:8px 0;transition:color .2s}
+.social-link:hover{color:var(--blue)}.social-link svg,.contact-links svg{flex-shrink:0}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.contact-links .button{gap:12px}
+@media(max-width:600px){.footer-socials{gap:16px}.social-link{font-size:12px}.contact-links .button{padding:14px 18px}}
