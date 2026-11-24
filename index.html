@@ -22,10 +22,10 @@
   <meta name="twitter:image" content="https://adilkp.vercel.app/assets/adil-portrait.webp">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <script src="js/greeting.js?v=4"></script>
   <script defer src="js/config.js"></script>
-  <script defer src="js/main.js?v=8"></script>
+  <script defer src="js/main.js?v=9"></script>
   <script defer src="js/motion.js?v=8"></script>
 
   <!-- Structured Data: WebSite, Person & FAQPage -->
@@ -124,24 +124,24 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Floating Sticky Pill Navbar -->
-  <header class="floating-header" id="site-header">
+    <header class="floating-header" id="site-header">
     <div class="header-pill-inner">
-      <a class="brand-pill" href="index.html" aria-label="Adil KP home">
+      <a class="brand-pill" href="#hero" aria-label="Adil KP home">
         <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-text">adilKP</span>
       </a>
 
       <nav class="nav-pill-track" id="navigation" aria-label="Main navigation">
         <span class="nav-hover-box" aria-hidden="true"></span>
-        <a href="projects.html" class="nav-link">Work</a>
-        <a href="services.html" class="nav-link">Services</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#services" class="nav-link">Services</a>
         <a href="#journey" class="nav-link">Journey</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-cta-wrap">
-        <a href="contact.html" class="header-cta-btn">Let’s talk ↗</a>
+        <a href="#contact" class="header-cta-btn">Let’s talk ↗</a>
         <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navigation">
           <span></span><span></span>
         </button>
@@ -150,8 +150,7 @@
   </header>
 
   <main id="main">
-    <!-- Hero Section: Blue Dome Gradient & Brand Badges -->
-    <section class="dome-hero" id="hero" aria-labelledby="hero-title">
+<section class="dome-hero" id="hero" aria-labelledby="hero-title">
       <div class="hero-pill-badge">
         <span class="badge-spark" aria-hidden="true"></span>
         <span>Digital Marketing Specialist</span>
@@ -161,8 +160,8 @@
       <p class="hero-sub split-blur">Strategy, ads, content and video, all from one marketer,<br>built to bring you leads and sales.</p>
 
       <div class="hero-cta-buttons">
-        <a href="contact.html" class="hero-btn-white">LET’S TALK ↗</a>
-        <a href="projects.html" class="hero-btn-glass">VIEW WORK ↗</a>
+        <a href="#contact" class="hero-btn-white">LET’S TALK ↗</a>
+        <a href="#work" class="hero-btn-glass">VIEW WORK ↗</a>
       </div>
 
       <a class="hero-scroll-cue" href="#proof">
@@ -171,8 +170,7 @@
       </a>
     </section>
 
-    <!-- Brand Logos Row -->
-    <section class="brand-logos-section" aria-label="Brands and Clients">
+<section class="brand-logos-section" aria-label="Brands and Clients">
       <div class="brand-logos-wrap">
         <div class="brand-logo-item"><span>naturals</span></div>
         <div class="brand-logo-item"><strong style="color:#2563eb;">kl</strong> <span>Abdul Sathar</span></div>
@@ -184,8 +182,7 @@
       </div>
     </section>
 
-    <!-- Proof & Bento Stats Section -->
-    <section class="proof-section wrap" id="proof" aria-labelledby="proof-title">
+<section class="proof-section wrap" id="proof" aria-labelledby="proof-title">
       <div class="proof-header">
         <h2 class="proof-title split-blur" id="proof-title">
           Proof, not promises.<br>
@@ -202,7 +199,7 @@
             <div class="bento-stat-giant">₹80Lakh</div>
             <p class="bento-stat-sub">Revenue generated / from just ₹30L in ad spend across performance campaigns.</p>
           </div>
-          <a href="projects.html" class="bento-breakdown-btn">SEE BREAKDOWN ↗</a>
+          <a href="#work" class="bento-breakdown-btn">SEE BREAKDOWN ↗</a>
         </article>
 
         <!-- Right Stack -->
@@ -242,8 +239,117 @@
       </div>
     </section>
 
-    <!-- Services Accordion Section -->
-    <section class="services-v2-section wrap" id="services" aria-labelledby="services-title">
+    <section class="projects-section" id="work" aria-labelledby="projects-preview-title">
+      <div class="wrap">
+        <div class="section-title">
+          <p class="eyebrow" style="color:var(--blue);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">FEATURED WORK</p>
+          <h2 id="projects-preview-title" class="split-blur">Selected projects<span class="blue">.</span></h2>
+          <p>Real work across paid advertising, high-impact motion, SEO visibility and web development.</p>
+        </div>
+        <div class="project-grid cinematic-grid">
+          <!-- Card 1 -->
+          <article class="project" id="project-1">
+            <a href="#contact" aria-label="Chickart Food Brand project">
+              <div class="project-art art-1" aria-hidden="true">
+                <span>Chickart<br>Brand.</span>
+                <div class="art-orbit"></div>
+                <span class="project-index" aria-hidden="true">↗</span>
+                <small>DIGITAL MARKETING / 01</small>
+              </div>
+            </a>
+            <p class="eyebrow">Digital Marketing · Chickart Food Brand</p>
+            <h3>Meta &amp; Google Ads for a food brand</h3>
+            <p>Increased customer reach, engagement and delivery orders through targeted offers, combos and promotional paid ads.</p>
+            <p class="role">Role: Digital Marketing &amp; Graphic Design</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project" id="project-2">
+            <a href="#contact" aria-label="Urban Hub Innovations motion project">
+              <div class="project-art art-2" aria-hidden="true">
+                <span>Urban Hub<br>Motion.</span>
+                <div class="art-orbit"></div>
+                <span class="project-index" aria-hidden="true">↗</span>
+                <small>MOTION &amp; VIDEO / 02</small>
+              </div>
+            </a>
+            <p class="eyebrow">Motion &amp; Video · Urban Hub Innovations</p>
+            <h3>Motion Graphics &amp; AI Video Content</h3>
+            <p>Created short, high-retention video content, dynamic motion graphics and AI-assisted reels for agency clients and brand campaigns.</p>
+            <p class="role">Role: Designer, Editor &amp; AI Video Creator</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project" id="project-3">
+            <a href="#contact" aria-label="Agency Campaigns & Client Ads">
+              <div class="project-art art-1" aria-hidden="true">
+                <span>Agency<br>Growth.</span>
+                <div class="art-orbit"></div>
+                <span class="project-index" aria-hidden="true">↗</span>
+                <small>DIGITAL MARKETING / 03</small>
+              </div>
+            </a>
+            <p class="eyebrow">Digital Marketing · Urban Hub Innovations</p>
+            <h3>Agency Campaigns &amp; Client Ads</h3>
+            <p>Planned and executed multi-channel lead generation and brand awareness campaigns across Meta Ads, Google Ads and LinkedIn.</p>
+            <p class="role">Role: Digital Marketing Executive</p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="project" id="project-4">
+            <a href="#contact" aria-label="KL Abdul Sathar Local SEO">
+              <div class="project-art art-3" aria-hidden="true">
+                <span>Local SEO<br>&amp; GBP.</span>
+                <div class="art-orbit"></div>
+                <span class="project-index" aria-hidden="true">↗</span>
+                <small>DIGITAL MARKETING / SEO / 04</small>
+              </div>
+            </a>
+            <p class="eyebrow">Local SEO &amp; GBP · KL Abdul Sathar Company</p>
+            <h3>Local SEO &amp; Google Business Profile</h3>
+            <p>Strengthened local search authority, Google Maps ranking and organic customer enquiries with targeted local keyword optimisation.</p>
+            <p class="role">Role: Digital Marketing Executive (on-site)</p>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="project" id="project-5">
+            <a href="#contact" aria-label="Haadh International Academy">
+              <div class="project-art art-4" aria-hidden="true">
+                <span>Haadh<br>Academy.</span>
+                <div class="art-orbit"></div>
+                <span class="project-index" aria-hidden="true">↗</span>
+                <small>SOCIAL MEDIA / 05</small>
+              </div>
+            </a>
+            <p class="eyebrow">Social Media · Haadh International Academy</p>
+            <h3>Social media content for an academy</h3>
+            <p>Scaled admissions enquiries and student engagement through structured content planning, Meta Ads campaigns and creative graphic design.</p>
+            <p class="role">Role: Content Planning &amp; Creatives</p>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="project" id="project-6">
+            <a href="#contact" aria-label="Personal & Client Websites">
+              <div class="project-art art-3" aria-hidden="true">
+                <span>Websites &amp;<br>Portfolio.</span>
+                <div class="art-orbit"></div>
+                <span class="project-index" aria-hidden="true">↗</span>
+                <small>WEB DEVELOPMENT / 06</small>
+              </div>
+            </a>
+            <p class="eyebrow">Web Development · Modern &amp; Fast</p>
+            <h3>Responsive Websites &amp; Conversion Portfolios</h3>
+            <p>Engineered blazing fast, mobile-friendly websites with clean typography, SEO-ready architecture and frictionless enquiry paths.</p>
+            <p class="role">Role: Design, Development &amp; Content</p>
+          </article>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+          <a class="button light" href="#contact">Start a project with me ↗</a>
+        </div>
+      </div>
+    </section>
+
+<section class="services-v2-section wrap" id="services" aria-labelledby="services-title">
       <div class="services-v2-header">
         <div>
           <p class="services-v2-eyebrow">— SERVICES</p>
@@ -260,7 +366,7 @@
           </summary>
           <div class="service-v2-body">
             <p class="service-v2-desc">Meta &amp; Google Ads built to turn spend into revenue, not just impressions. As a performance marketer in Kerala, I treat every rupee as accountable — tracked, tested and optimised toward real business returns. High ROAS campaigns built with structured targeting, sharp creative and relentless optimisation.</p>
-            <a href="services.html#service-1" class="service-v2-cta">Discuss Performance Marketing ↗</a>
+            <a href="#services" class="service-v2-cta">Discuss Performance Marketing ↗</a>
           </div>
         </details>
 
@@ -271,7 +377,7 @@
           </summary>
           <div class="service-v2-body">
             <p class="service-v2-desc">When people search on Google for what you sell, do they find you or your competitor? I get your website ranking where the buyers are looking — the SEO side of being a digital marketer in Kerala that brands actually trust. Long-term, compounding, organic enquiry traffic.</p>
-            <a href="services.html#service-3" class="service-v2-cta">Explore SEO Services ↗</a>
+            <a href="#services" class="service-v2-cta">Explore SEO Services ↗</a>
           </div>
         </details>
 
@@ -282,7 +388,7 @@
           </summary>
           <div class="service-v2-body">
             <p class="service-v2-desc">Sometimes you don't need more ads — you need the right plan first. I help you nail positioning, messaging and growth direction before a single rupee goes into media, ensuring your brand stands out in saturated markets.</p>
-            <a href="contact.html" class="service-v2-cta">Book a Consultation ↗</a>
+            <a href="#contact" class="service-v2-cta">Book a Consultation ↗</a>
           </div>
         </details>
 
@@ -293,7 +399,7 @@
           </summary>
           <div class="service-v2-body">
             <p class="service-v2-desc">Your customers scroll Instagram and Facebook every day — the question is whether they see you. Content strategy, posting schedules, engagement and community building that make the algorithm work for your brand.</p>
-            <a href="services.html#service-2" class="service-v2-cta">Explore Social Media ↗</a>
+            <a href="#services" class="service-v2-cta">Explore Social Media ↗</a>
           </div>
         </details>
 
@@ -304,7 +410,7 @@
           </summary>
           <div class="service-v2-body">
             <p class="service-v2-desc">Search isn't just Google anymore. I optimise your brand to show up on Google AND inside AI answers — ChatGPT, Gemini and Perplexity. Generative Engine Optimisation that positions you ahead of the curve.</p>
-            <a href="services.html#service-3" class="service-v2-cta">Discover AEO &amp; GEO ↗</a>
+            <a href="#services" class="service-v2-cta">Discover AEO &amp; GEO ↗</a>
           </div>
         </details>
 
@@ -315,14 +421,44 @@
           </summary>
           <div class="service-v2-body">
             <p class="service-v2-desc">Scaling D2C and e-commerce brands with funnels that turn clicks into customers. Lead capture, nurture, retargeting and automated systems that keep your cost per result dropping as you scale.</p>
-            <a href="services.html#service-1" class="service-v2-cta">Discuss Lead Generation ↗</a>
+            <a href="#services" class="service-v2-cta">Discuss Lead Generation ↗</a>
           </div>
         </details>
       </div>
+    
+      <!-- 4-Step Process -->
+      <div class="process-section" style="margin-top:64px;padding-top:48px;border-top:1px solid rgba(255,255,255,0.08);" aria-labelledby="process-title">
+        <div class="section-heading" style="text-align:center;max-width:650px;margin:0 auto 36px;">
+          <p class="eyebrow" style="color:var(--blue);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">HOW WE WORK</p>
+          <h3 id="process-title" style="font-size:32px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">A clear path from idea <em>to real results.</em></h3>
+          <p style="color:var(--muted);font-size:15px;">No unnecessary complexity or jargon. Just structured execution focused on your business growth.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-card">
+            <span class="process-step-num">01</span>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;">Discover</h4>
+            <p>We talk about your business, audience, current bottlenecks and revenue goals.</p>
+          </div>
+          <div class="process-card">
+            <span class="process-step-num">02</span>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;">Plan</h4>
+            <p>I prepare the strategy, campaign structure, audience targeting and creative angles.</p>
+          </div>
+          <div class="process-card">
+            <span class="process-step-num">03</span>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;">Create &amp; Launch</h4>
+            <p>I build high-converting creatives, configure the ad campaigns or site, and go live.</p>
+          </div>
+          <div class="process-card">
+            <span class="process-step-num">04</span>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;">Optimise</h4>
+            <p>I track metrics daily, eliminate spend leaks and scale top-performing creative assets.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Experience Timeline (My Journey) -->
-    <section class="experience wrap" id="journey" aria-labelledby="experience-title">
+<section class="experience wrap" id="journey" aria-labelledby="experience-title">
       <p class="eyebrow">MY JOURNEY</p>
       <h2 id="experience-title" class="split-blur">Experience<span class="blue">.</span></h2>
       <div class="timeline">
@@ -370,84 +506,7 @@
       </div>
     </section>
 
-    <!-- Selected Projects Preview -->
-    <section class="projects-section" id="work" aria-labelledby="projects-preview-title">
-      <div class="wrap">
-        <div class="section-title">
-          <h2 id="projects-preview-title" class="split-blur">Selected projects<span class="blue">.</span></h2>
-          <p>Real work across ads, content, video and web.</p>
-        </div>
-        <div class="project-grid cinematic-grid">
-          <!-- Card 1 -->
-          <article class="project" id="home-p1">
-            <a href="projects.html#project-1" aria-label="View Chickart Food Brand project">
-              <div class="project-art art-1" aria-hidden="true">
-                <span>Chickart<br>Brand.</span>
-                <div class="art-orbit"></div>
-                <span class="project-index" aria-hidden="true">↗</span>
-                <small>DIGITAL MARKETING / 01</small>
-              </div>
-            </a>
-            <p class="eyebrow">Digital Marketing · Chickart Food Brand</p>
-            <h3><a href="projects.html#project-1">Meta &amp; Google Ads for a food brand</a></h3>
-            <p>Increase reach, engagement and orders through offers, combos and promotions.</p>
-            <p class="role">Role: Ads, content and creatives</p>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="project" id="home-p2">
-            <a href="projects.html#project-2" aria-label="View Urban Hub Innovations motion project">
-              <div class="project-art art-2" aria-hidden="true">
-                <span>Urban Hub<br>Motion.</span>
-                <div class="art-orbit"></div>
-                <span class="project-index" aria-hidden="true">↗</span>
-                <small>MOTION &amp; VIDEO / 02</small>
-              </div>
-            </a>
-            <p class="eyebrow">Motion &amp; Video · Urban Hub Innovations</p>
-            <h3><a href="projects.html#project-2">Motion graphics &amp; AI video content</a></h3>
-            <p>Produced reels, motion graphics and video edits, and created AI-generated video content for campaigns and brand storytelling.</p>
-            <p class="role">Role: Design, editing, AI video</p>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="project" id="home-p3">
-            <a href="projects.html#project-6" aria-label="View Personal Portfolio Website project">
-              <div class="project-art art-3" aria-hidden="true">
-                <span>Websites &amp;<br>Portfolio.</span>
-                <div class="art-orbit"></div>
-                <span class="project-index" aria-hidden="true">↗</span>
-                <small>WEB DEVELOPMENT / 03</small>
-              </div>
-            </a>
-            <p class="eyebrow">Web Development · Personal &amp; client sites</p>
-            <h3><a href="projects.html#project-6">Websites &amp; portfolio build</a></h3>
-            <p>Designed and built a multi-page responsive portfolio with SEO-ready pages and clear contact paths.</p>
-            <p class="role">Role: Design, WordPress, content</p>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="project" id="home-p4">
-            <a href="projects.html#project-5" aria-label="View Haadh International Academy social project">
-              <div class="project-art art-4" aria-hidden="true">
-                <span>Haadh<br>Academy.</span>
-                <div class="art-orbit"></div>
-                <span class="project-index" aria-hidden="true">↗</span>
-                <small>SOCIAL MEDIA / 04</small>
-              </div>
-            </a>
-            <p class="eyebrow">Social Media · Haadh International Academy</p>
-            <h3><a href="projects.html#project-5">Social media content for an academy</a></h3>
-            <p>Ran Meta Ads, prepared content and creatives, supported social media planning, graphic design, website tasks and SEO.</p>
-            <p class="role">Role: Content planning and creatives</p>
-          </article>
-        </div>
-        <a class="button light" href="projects.html">View all projects ↗</a>
-      </div>
-    </section>
-
-    <!-- About Us / Luxury Dark Bento Card Section -->
-    <section class="about-bento-section wrap" id="about" aria-labelledby="about-bento-title">
+<section class="about-bento-section wrap" id="about" aria-labelledby="about-bento-title">
       <div class="about-bento-card">
         <div class="about-bento-top">
           <span class="about-tag-badge">[ ABOUT US ] ▼</span>
@@ -487,7 +546,7 @@
           <div class="about-bio-col">
             <h3 id="about-bento-title">Adil KP</h3>
             <p class="about-bio-text">I’m Mohammed Adil KP, a Digital Marketing Specialist from Kannur, Kerala. I combine performance marketing with creative design, motion graphics and AI video. My work blends strategic targeting with motion-driven creative systems, ensuring your ads, content and website all convert as one unified machine.</p>
-            <a href="about.html" class="about-bio-btn">More about Adil ↗</a>
+            <a href="#about" class="about-bio-btn">More about Adil ↗</a>
           </div>
         </div>
 
@@ -512,14 +571,13 @@
       </div>
     </section>
 
-    <!-- AI Video & Motion Showcase Section -->
-    <section class="video-showcase-section" id="videos" aria-labelledby="videos-title">
+<section class="video-showcase-section" id="videos" aria-labelledby="videos-title">
       <div class="video-showcase-header">
         <h2 class="video-showcase-title split-blur" id="videos-title">AI videos that get<br>watched to the end.</h2>
         <p class="video-showcase-sub">Creative ads, explainers and reels, scripted, generated and edited in one workflow.</p>
         <div class="video-cta-group">
-          <a href="contact.html" class="video-btn-primary">Start a project ↗</a>
-          <a href="projects.html#project-2" class="video-btn-secondary">See my works</a>
+          <a href="#contact" class="video-btn-primary">Start a project ↗</a>
+          <a href="#videos" class="video-btn-secondary">See my works</a>
         </div>
       </div>
 
@@ -555,8 +613,7 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section wrap" id="testimonials" aria-labelledby="testimonials-title">
+<section class="testimonials-section wrap" id="testimonials" aria-labelledby="testimonials-title">
       <div class="testimonials-header">
         <p class="testimonials-eyebrow">[ TESTIMONIALS ]</p>
         <h2 class="testimonials-title split-blur" id="testimonials-title">
@@ -612,8 +669,7 @@
       </div>
     </section>
 
-    <!-- FAQ Accordion Section (Two Column Layout) -->
-    <section class="faq-v2-section wrap" id="faq" aria-labelledby="faq-title">
+<section class="faq-v2-section wrap" id="faq" aria-labelledby="faq-title">
       <div class="faq-v2-layout">
         <div class="faq-v2-left">
           <p class="faq-v2-eyebrow">[ FAQ ]</p>
@@ -725,6 +781,136 @@
         </div>
       </div>
     </section>
+
+
+    <!-- Contact Section -->
+    <section class="wrap" id="contact" style="padding-top:80px;margin-bottom:80px;" aria-labelledby="contact-heading">
+      <div class="section-heading" style="text-align:center;max-width:700px;margin:0 auto 48px;">
+        <p class="eyebrow" style="color:var(--blue);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">GET IN TOUCH</p>
+        <h2 id="contact-heading" class="split-blur" style="font-size: clamp(32px, 5vw, 48px);">Let’s work<br><em>together.</em></h2>
+        <p style="font-size:16px;color:var(--muted);margin-top:12px;">Tell me about your business and your goal. I’ll reply with a clear next step.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left: Direct Info Card -->
+        <div class="contact-info-card">
+          <p class="eyebrow">DIRECT REACH</p>
+          <h2>Start a conversation<span class="blue">.</span></h2>
+          <p>Whether you have a specific campaign in mind or need guidance on where to start, feel free to reach out directly.</p>
+
+          <div class="contact-meta-list">
+            <div class="contact-meta-item">
+              <span class="contact-meta-label">Email</span>
+              <span class="contact-meta-val"><a href="mailto:mohammedaadhilkp@gmail.com">mohammedaadhilkp@gmail.com</a></span>
+            </div>
+            <div class="contact-meta-item">
+              <span class="contact-meta-label">WhatsApp / Phone</span>
+              <span class="contact-meta-val"><a href="https://wa.me/917736735421" target="_blank" rel="noopener noreferrer">+91 7736735421</a></span>
+            </div>
+            <div class="contact-meta-item">
+              <span class="contact-meta-label">Location</span>
+              <span class="contact-meta-val">Kannur, Kerala, India</span>
+            </div>
+            <div class="contact-meta-item">
+              <span class="contact-meta-label">Response Time</span>
+              <span class="contact-meta-val">I usually reply within 24 hours.</span>
+            </div>
+            <div class="contact-meta-item">
+              <span class="contact-meta-label">Current Availability</span>
+              <span class="contact-meta-val" style="font-size:14px;color:#4f515b;">Open to full-time roles (including Saudi Arabia / remote) and freelance projects.</span>
+            </div>
+          </div>
+
+          <div class="contact-links" style="margin-top:24px;">
+            <a class="button outline" href="https://wa.me/917736735421" target="_blank" rel="noopener noreferrer">
+              <span>Chat on WhatsApp ↗</span>
+            </a>
+            <a class="button outline" href="mailto:mohammedaadhilkp@gmail.com">
+              <span>Send an email ↗</span>
+            </a>
+            <a class="button outline" href="https://www.linkedin.com/in/mohammedadilkp/" target="_blank" rel="noopener noreferrer">
+              <span>Connect on LinkedIn ↗</span>
+            </a>
+          </div>
+
+          <!-- Small FAQ -->
+          <div style="margin-top:35px;padding-top:25px;border-top:1px solid var(--line);">
+            <p class="eyebrow" style="margin-bottom:12px;">QUICK ANSWERS</p>
+            <div style="margin-bottom:14px;">
+              <strong style="font-size:13px;color:var(--ink);display:block;margin-bottom:4px;">Do you take freelance work?</strong>
+              <p style="font-size:13px;color:var(--muted);line-height:1.5;">Yes, for ads, content, video and websites.</p>
+            </div>
+            <div>
+              <strong style="font-size:13px;color:var(--ink);display:block;margin-bottom:4px;">Can we talk on a call?</strong>
+              <p style="font-size:13px;color:var(--muted);line-height:1.5;">Yes. Message me and we’ll fix a convenient time.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form Card -->
+        <div class="contact-form-card">
+          <p class="eyebrow">PROJECT ENQUIRY FORM</p>
+          <h2 style="font-size:28px;margin-bottom:18px;">Send a message<span class="blue">.</span></h2>
+
+          <form class="contact-form" action="https://formspree.io/f/mohammedaadhilkp@gmail.com" method="POST">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="contact-name" name="name" required placeholder="e.g. Rahul Sharma" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email <span class="req">*</span></label>
+              <input class="form-input" type="email" id="contact-email" name="email" required placeholder="you@company.com" autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone / WhatsApp (optional)</label>
+              <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-interest">I’m interested in</label>
+              <select class="form-select" id="contact-interest" name="interest">
+                <option value="Meta Ads">Meta Ads (Facebook &amp; Instagram)</option>
+                <option value="Google Ads">Google Ads (Search &amp; Local)</option>
+                <option value="SEO / GEO">SEO / GEO &amp; Google Business Profile</option>
+                <option value="Social Media Management">Social Media Management</option>
+                <option value="Motion Graphics / Video">Motion Graphics / Video &amp; Reels</option>
+                <option value="Website">Website &amp; Web Development</option>
+                <option value="Full-time job opportunity">Full-time job opportunity</option>
+                <option value="Other">Other enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-budget">Budget range (optional)</label>
+              <select class="form-select" id="contact-budget" name="budget">
+                <option value="Not sure yet">Not sure yet</option>
+                <option value="Small">Small project</option>
+                <option value="Medium">Medium scale</option>
+                <option value="Large">Large ongoing campaign</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Tell me about your project <span class="req">*</span></label>
+              <textarea class="form-textarea" id="contact-message" name="message" required placeholder="Tell me about your business, current marketing challenges, and what you’d like to achieve..."></textarea>
+            </div>
+
+            <button type="submit" class="button form-submit-btn">Send message</button>
+
+            <div class="form-status success" role="alert">
+              Thank you. Your message has been sent. I’ll get back to you soon.
+            </div>
+            <div class="form-status error" role="alert">
+              Something went wrong. Please try again or <a href="https://wa.me/917736735421" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">message me directly on WhatsApp</a>.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Luxury Footer with Giant Watermark Typography -->
@@ -738,7 +924,7 @@
           </a>
           <p class="footer-tagline-text">Digital marketer from Kerala. Building brands that scale with strategy, not luck.</p>
           
-          <form class="footer-subscribe-form" action="contact.html" method="GET">
+          <form class="footer-subscribe-form" action="#contact" method="GET">
             <input class="footer-subscribe-input" type="email" placeholder="Enter your email..." aria-label="Email address" required>
             <button class="footer-subscribe-btn" type="submit">Submit ↗</button>
           </form>
@@ -749,24 +935,24 @@
             <div class="footer-col-title">Explore</div>
             <div class="footer-col-links">
               <a href="index.html">Home</a>
-              <a href="about.html">About Me</a>
+              <a href="#about">About Me</a>
               <a href="#faq">FAQ</a>
             </div>
           </div>
           <div>
             <div class="footer-col-title">Services</div>
             <div class="footer-col-links">
-              <a href="services.html#service-1">Performance Ads</a>
-              <a href="services.html#service-2">Social Media</a>
-              <a href="services.html#service-3">SEO &amp; GEO</a>
+              <a href="#services">Performance Ads</a>
+              <a href="#services">Social Media</a>
+              <a href="#services">SEO &amp; GEO</a>
             </div>
           </div>
           <div>
             <div class="footer-col-title">Works</div>
             <div class="footer-col-links">
-              <a href="projects.html">Selected Projects</a>
-              <a href="projects.html#project-2">Motion &amp; AI Video</a>
-              <a href="contact.html">Get Quote</a>
+              <a href="#work">Selected Projects</a>
+              <a href="#videos">Motion &amp; AI Video</a>
+              <a href="#contact">Get Quote</a>
             </div>
           </div>
           <div>

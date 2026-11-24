@@ -150,7 +150,7 @@ if (contactForm) {
 
 
 // ==========================================================================
-// FLOATING PILL STICKY HEADER & CURSOR BOX ANIMATION
+// FLOATING PILL STICKY HEADER & CURSOR BOX ANIMATION & SCROLL SPY
 // ==========================================================================
 (function() {
   const floatingHeader = document.querySelector('.floating-header');
@@ -163,42 +163,77 @@ if (contactForm) {
   }
 
   const navTrack = document.querySelector('.nav-pill-track');
+  const mobileToggle = document.querySelector('.mobile-toggle');
+
   if (navTrack) {
     const hoverBox = navTrack.querySelector('.nav-hover-box');
     const links = [...navTrack.querySelectorAll('.nav-link')];
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    
-    // Find active link
-    let activeLink = links.find(l => {
-      const href = l.getAttribute('href');
-      if (!href) return false;
-      if (href.startsWith('#')) return false;
-      return (currentPath === '' || currentPath === 'index.html') ? (href === 'index.html' || href === 'projects.html') : href.includes(currentPath);
-    }) || links[0];
+    let activeLink = null;
+    let isUserHovering = false;
 
     function positionBox(targetEl) {
-      if (!hoverBox || !targetEl) return;
+      if (!hoverBox || !targetEl) {
+        if (hoverBox && !targetEl) hoverBox.classList.remove('is-visible');
+        return;
+      }
       const trackRect = navTrack.getBoundingClientRect();
       const linkRect = targetEl.getBoundingClientRect();
       const x = linkRect.left - trackRect.left;
       const y = linkRect.top - trackRect.top;
-      
+
       hoverBox.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
       hoverBox.style.width = linkRect.width + 'px';
       hoverBox.style.height = linkRect.height + 'px';
       hoverBox.classList.add('is-visible');
     }
 
-    if (activeLink) {
-      setTimeout(() => positionBox(activeLink), 120);
-    }
+    // Smooth scroll and active state on click
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = floatingHeader ? 80 : 0;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Update active link if this anchor is in nav
+          const navMatch = links.find(l => l.getAttribute('href') === href);
+          if (navMatch) {
+            activeLink = navMatch;
+            positionBox(activeLink);
+          }
+
+          // Close mobile menu if open
+          if (navTrack.classList.contains('is-open')) {
+            navTrack.classList.remove('is-open');
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+    // Hover box cursor animations
     links.forEach(link => {
-      link.addEventListener('mouseenter', () => positionBox(link));
-      link.addEventListener('focus', () => positionBox(link));
+      link.addEventListener('mouseenter', () => {
+        isUserHovering = true;
+        positionBox(link);
+      });
+      link.addEventListener('focus', () => {
+        isUserHovering = true;
+        positionBox(link);
+      });
     });
 
     navTrack.addEventListener('mouseleave', () => {
+      isUserHovering = false;
       if (activeLink) {
         positionBox(activeLink);
       } else if (hoverBox) {
@@ -206,12 +241,54 @@ if (contactForm) {
       }
     });
 
+    // Scroll spy for single-page portfolio
+    const sectionIds = ['work', 'services', 'journey', 'about', 'contact'];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    function updateScrollSpy() {
+      if (isUserHovering) return;
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const triggerPoint = scrollY + 160;
+
+      let currentId = null;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sec = sections[i];
+        if (sec.offsetTop <= triggerPoint) {
+          currentId = sec.id;
+          break;
+        }
+      }
+
+      if (currentId) {
+        const matchingLink = links.find(l => l.getAttribute('href') === '#' + currentId);
+        if (matchingLink && matchingLink !== activeLink) {
+          activeLink = matchingLink;
+          positionBox(activeLink);
+        }
+      } else {
+        // At hero / top of page
+        if (activeLink) {
+          activeLink = null;
+          if (hoverBox) hoverBox.classList.remove('is-visible');
+        }
+      }
+    }
+
+    let spyTimer = null;
+    window.addEventListener('scroll', () => {
+      if (spyTimer) cancelAnimationFrame(spyTimer);
+      spyTimer = requestAnimationFrame(updateScrollSpy);
+    }, { passive: true });
+
     window.addEventListener('resize', () => {
       if (activeLink) positionBox(activeLink);
     });
+
+    // Initial check after load
+    setTimeout(updateScrollSpy, 200);
   }
 
-  const mobileToggle = document.querySelector('.mobile-toggle');
   if (mobileToggle && navTrack) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = navTrack.classList.toggle('is-open');
