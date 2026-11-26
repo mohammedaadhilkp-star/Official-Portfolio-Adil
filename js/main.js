@@ -8,38 +8,16 @@ function updateHeaderScroll() { if (header) header.classList.toggle('is-scrolled
 window.addEventListener('scroll', updateHeaderScroll, { passive: true });
 updateHeaderScroll();
 
-function closeMenu() { menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
-menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); nav.classList.toggle('is-open', open); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
-nav.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
-matchMedia('(min-width: 601px)').addEventListener('change', closeMenu);
-
-if (nav) {
- const navLinks = [...nav.querySelectorAll('a')];
- if (navLinks.length > 0 && matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  nav.classList.add('has-indicator');
-  const box = document.createElement('span');
-  box.className = 'nav-indicator-box';
-  box.setAttribute('aria-hidden', 'true');
-  nav.appendChild(box);
-  let activeLink = null;
-  function moveTo(link) {
-   if (!link) return;
-   box.style.setProperty('--box-x', `${link.offsetLeft}px`);
-   box.style.setProperty('--box-y', `${link.offsetTop}px`);
-   box.style.width = `${link.offsetWidth}px`;
-   box.style.height = `${link.offsetHeight}px`;
-   box.classList.add('is-active');
-  }
-  function hideBox() { box.classList.remove('is-active'); activeLink = null; }
-  navLinks.forEach(link => {
-   link.addEventListener('mouseenter', () => { activeLink = link; moveTo(link); });
-   link.addEventListener('focus', () => { activeLink = link; moveTo(link); });
-   link.addEventListener('blur', () => { if (activeLink === link) hideBox(); });
+// Legacy header support (the home page uses the floating navigation below).
+if (menu && nav) {
+  const closeMenu = () => { menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+  menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    menu.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
   });
-  nav.addEventListener('mouseleave', hideBox);
-  window.addEventListener('resize', () => { if (activeLink) moveTo(activeLink); });
- }
+  nav.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 }
 const details = [...document.querySelectorAll('.accordion details')];
 details.forEach(item => item.addEventListener('toggle', () => { if (item.open) { details.forEach(other => { if (other !== item) other.open = false; }); if (!reduced.matches) item.querySelector('.service-body').animate([{opacity:0, transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:400,easing:'ease-out'}); } }));
@@ -84,7 +62,7 @@ if ('IntersectionObserver' in window) {
    if(frame)animations.set(frame,frame.animate([{clipPath:'inset(15% 9% 15% 9% round 32px)'},{clipPath:'inset(0% 0% 0% 0% round 24px)'}],{duration:1100,easing:'cubic-bezier(.18,.7,.25,1)'}));
   } else if(!entry.isIntersecting&&entry.boundingClientRect.top>innerHeight){animations.get(entry.target)?.cancel();animations.delete(entry.target);entry.target.dataset.revealed='false';}
  }),{threshold:.10,rootMargin:'0px 0px -30px 0px'});
- document.querySelectorAll('.intro-layout,.section-heading,.accordion details,.milestone,.project,.about-section>div,.contact-section,.service-grid article,.service-detail-card,.page-intro,.footer,.numbers-strip,.tools-section,.faq-section,.process-card,.focus-card,.skills-block,.cred-card,.contact-info-card,.contact-form-card').forEach(el=>observer.observe(el));
+ document.querySelectorAll('.journey-card,.growth-profile-card,.growth-strategy-card,.growth-intro-stack,.growth-services-header,.growth-service-row,.intro-layout,.section-heading,.accordion details,.milestone,.project,.about-section>div,.contact-section,.service-grid article,.service-detail-card,.page-intro,.footer,.numbers-strip,.tools-section,.faq-section,.process-card,.focus-card,.skills-block,.cred-card,.contact-info-card,.contact-form-card').forEach(el=>observer.observe(el));
  reduced.addEventListener('change',()=>{if(reduced.matches){animations.forEach(a=>a.cancel());animations.clear();}});
 }
 
@@ -290,10 +268,31 @@ if (contactForm) {
   }
 
   if (mobileToggle && navTrack) {
+    function closeMobileMenu(returnFocus = false) {
+      navTrack.classList.remove('is-open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.setAttribute('aria-label', 'Open navigation');
+      if (returnFocus) mobileToggle.focus();
+    }
+    mobileToggle.setAttribute('aria-label', 'Open navigation');
     mobileToggle.addEventListener('click', () => {
       const isOpen = navTrack.classList.toggle('is-open');
       mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      mobileToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     });
+    navTrack.addEventListener('click', e => { if (e.target.closest('a')) closeMobileMenu(); });
+    document.addEventListener('click', e => {
+      if (!floatingHeader.contains(e.target)) closeMobileMenu();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navTrack.classList.contains('is-open')) closeMobileMenu(true);
+    });
+    floatingHeader.addEventListener('focusout', () => {
+      requestAnimationFrame(() => {
+        if (!floatingHeader.contains(document.activeElement)) closeMobileMenu();
+      });
+    });
+    matchMedia('(min-width: 901px)').addEventListener('change', () => closeMobileMenu());
   }
 })();
 
@@ -384,3 +383,98 @@ if (reelFilterBtns.length) {
     });
   });
 }
+
+// Animate the proof statistics once as each card enters the viewport.
+(function initStatisticCounters() {
+  const statistics = document.querySelectorAll('.bento-stat-giant, .card-stat');
+  if (reduced.matches || !('IntersectionObserver' in window)) return;
+  const formatter = new Intl.NumberFormat('en-IN');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      const element = entry.target;
+      const original = element.textContent.trim();
+      const parts = original.match(/^([^\d]*)([\d,]+)(.*)$/);
+      if (!parts) return;
+      const target = Number(parts[2].replace(/,/g, ''));
+      const start = performance.now();
+      const duration = 1600;
+      // Keep the final value available to assistive technology during animation.
+      element.setAttribute('aria-label', original);
+      const display = document.createElement('span');
+      display.setAttribute('aria-hidden', 'true');
+      element.replaceChildren(display);
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+        display.textContent = parts[1] + formatter.format(value) + parts[3];
+        if (progress < 1) requestAnimationFrame(tick);
+        else element.textContent = original;
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: .35 });
+  statistics.forEach(element => observer.observe(element));
+})();
+
+// Clean menu URLs open the corresponding section, including direct visits.
+(function initMenuRoutes() {
+  const routeTargets = { '/': 'hero', '/services': 'services', '/work': 'work', '/about': 'about', '/blog': 'blog', '/contact': 'contact' };
+  const path = location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-pill-track .nav-link').forEach(link => {
+    if (link.getAttribute('href') === path) link.setAttribute('aria-current', 'page');
+  });
+  const target = document.getElementById(routeTargets[path]);
+  if (target && path !== '/' && !location.hash) {
+    const showSection = () => target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (document.readyState === 'complete') showSection();
+    else window.addEventListener('load', showSection, { once: true });
+  }
+})();
+
+// Keep the moving video ribbon curved relative to the viewport center.
+(function initCurvedVideoRibbon() {
+  const section = document.querySelector('#videos');
+  if (!section || reduced.matches) return;
+  const cards = [...section.querySelectorAll('.reel-card')];
+  let frame = 0;
+  let visible = false;
+  function draw() {
+    frame = 0;
+    if (!visible || reduced.matches) return;
+    const width = section.clientWidth;
+    const bounds = section.getBoundingClientRect();
+    const depth = width < 600 ? 30 : 38;
+    const rectangles = cards.map(card => card.getBoundingClientRect());
+    cards.forEach((card, index) => {
+      // Keep the curve fixed to the viewport as the track slides through it.
+      const rect = rectangles[index];
+      const x = Math.max(-1, Math.min(1, (rect.left + rect.width / 2 - bounds.left - width / 2) / (width / 2)));
+      card.style.setProperty('--arc-offset', `${depth * (1 - 2 * x * x)}px`);
+      card.style.setProperty('--arc-turn', `${-x * 24}deg`);
+    });
+    frame = requestAnimationFrame(draw);
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      if (visible && !frame) frame = requestAnimationFrame(draw);
+      else if (!visible && frame) { cancelAnimationFrame(frame); frame = 0; }
+    }).observe(section);
+  } else { visible = true; frame = requestAnimationFrame(draw); }
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) {
+      cancelAnimationFrame(frame); frame = 0;
+      cards.forEach(card => { card.style.removeProperty('--arc-offset'); card.style.removeProperty('--arc-turn'); });
+    } else if (visible && !frame) frame = requestAnimationFrame(draw);
+  });
+})();
+
+// Reveal every available FAQ using the reference's overview action.
+document.querySelector('.faq-expand-all')?.addEventListener('click', () => {
+  document.querySelectorAll('#faq details').forEach(item => { item.open = true; });
+  document.querySelector('.faq-v2-accordion')?.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth', block: 'start' });
+});
+
+(function(){const map=document.querySelector('.journey-map');if(!map)return;let pending=false;function update(){pending=false;const r=map.getBoundingClientRect();map.style.setProperty('--journey-progress',reduced.matches?1:Math.max(0,Math.min(1,(innerHeight*.7-r.top)/r.height)));}addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update)}},{passive:true});addEventListener('resize',update);update();})();
