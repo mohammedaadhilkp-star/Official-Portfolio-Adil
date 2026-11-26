@@ -2097,15 +2097,40 @@ h1, h2, h3, h4, h5, h6, .bento-stat-giant, .card-stat, .stat-num {
   .nav-pill-track .nav-link { padding-inline: 12px; }
 }
 
-.blog-page { background: #f5f2ec; }
-.blog-hero { min-height: 100svh; display: flex; align-items: center; padding: 180px 0 100px; }
-.blog-hero h1 { font-size: clamp(60px, 9vw, 132px); line-height: .98; letter-spacing: -.065em; }
-.blog-hero h1 span { color: #777; }
-.blog-hero-description { margin-top: 32px; max-width: 650px; font-size: 18px; color: #555; line-height: 1.7; }
-.blog-hero .button { margin-top: 36px; }
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('../assets/fonts/ppneuemontreal-medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+.blog-page { background: #f5f2ec; padding: 0; }
+.blog-hero {
+  position: relative;
+  min-height: clamp(640px, 88svh, 900px);
+  display: flex;
+  align-items: center;
+  padding: 140px 24px 70px;
+  overflow: hidden;
+  border-radius: 0;
+  color: #fafafa;
+  text-align: center;
+  background: #03091c url('../assets/hero-background.jpg') center / 106% 106% no-repeat;
+}
+.blog-hero > .wrap { width: 100%; max-width: 1320px; margin: 0 auto; transform: translateY(20px); }
+.blog-hero h1 { font-family: 'PP Neue Montreal', Arial, sans-serif; font-weight: 500; font-size: clamp(36px, 3.25vw, 72px); line-height: 1.12; letter-spacing: -.025em; }
+.blog-hero-description { margin: 32px auto 0; max-width: 1000px; font-size: clamp(16px, .9vw, 22px); color: #fafafa; line-height: 1.5; }
+.blog-scroll-cue { position: absolute; bottom: 28px; left: 28px; color: #fff; font-size: 14px; }
+.blog-scroll-cue span { margin-left: 8px; }
+.blog-coming-soon { padding: 110px 24px 130px; text-align: center; }
+.blog-coming-soon .eyebrow { color: #1763ed; margin-bottom: 22px; }
+.blog-coming-soon h2 { font-family: 'PP Neue Montreal', Arial, sans-serif; font-weight: 500; }
+.blog-coming-soon > p:last-child { max-width: 520px; margin: 24px auto 0; color: #666; font-size: 18px; }
 @media (max-width: 600px) {
-  .blog-hero { padding: 150px 0 70px; }
-  .blog-hero-description { font-size: 16px; }
+  .blog-hero { min-height: 88svh; padding: 140px 20px 100px; border-radius: 0; }
+  .blog-hero h1 { font-size: clamp(32px, 7.5vw, 45px); }
+  .blog-hero-description { margin-top: 26px; max-width: 340px; }
+  .blog-scroll-cue { left: 20px; bottom: 24px; }
 }
 
 /* Compact floating navigation. */
@@ -2384,3 +2409,39 @@ h1, h2, h3, h4, h5, h6, .bento-stat-giant, .card-stat, .stat-num {
 .journey-start{position:absolute;top:10px;left:calc(50% + 20px);color:#bbb;font:11px monospace}.journey-start small{display:block;font-size:9px;color:#666;margin-top:9px}.journey-stop{position:absolute;width:100%;height:180px}.stop-1{top:160px;--node-x:46%}.stop-2{top:470px;--node-x:57%}.stop-3{top:780px;--node-x:46%}.stop-4{top:1090px;--node-x:57%}.journey-card{position:absolute;width:35%;left:3%;padding:22px;border:1px solid #ffffff22;border-radius:24px;background:#ffffff05}.journey-stop:nth-of-type(even) .journey-card{left:65%;width:35%}.journey-date{display:inline-block;font:11px monospace;background:#ffffff14;border-radius:99px;padding:6px 16px;color:#b9bac4}.journey-now{display:inline-block;background:#2165ff;border-radius:99px;padding:6px 10px;font-size:11px;margin-left:8px}.journey-card h3{font-size:22px;letter-spacing:-.02em;margin:16px 0 8px;font-weight:600}.journey-card p{font-size:14px;color:#999aa7;line-height:1.5}.journey-skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}.journey-skills span{border:1px solid #ffffff30;border-radius:99px;padding:6px 12px;font-size:12px;color:#bcbec9}.journey-node{position:absolute;top:75px;left:var(--node-x);transform:translateX(-50%);width:34px;height:34px;border:2px solid #fff;border-radius:50%;background:#0b0b0e}.journey-node::after{content:'';position:absolute;inset:9px;border-radius:50%;background:#fff}.journey-year{position:absolute;top:20px;left:56%;font-size:110px;font-weight:600;color:transparent;-webkit-text-stroke:1px #ffffff24;line-height:1}.journey-stop:nth-of-type(even) .journey-year{left:12%}.stop-4 .journey-node{box-shadow:0 0 25px #246dff99;animation:journey-pulse 2s ease-out infinite}.journey-next{position:absolute;bottom:0;left:50%;display:flex;align-items:center;gap:15px;color:#acb2c5;font:11px monospace}.journey-next>span{width:14px;height:14px;border-radius:50%;background:#40db91;animation:journey-green 2s ease-out infinite}@keyframes journey-pulse{0%{box-shadow:0 0 0 0 #377eff66}100%{box-shadow:0 0 0 30px #377eff00}}@keyframes journey-green{0%{box-shadow:0 0 0 0 #40db9166}100%{box-shadow:0 0 0 14px #40db9100}}
 @media(max-width:700px){.premium-journey{padding:65px 0}.journey-map{height:1500px}.journey-road{left:-38%;width:100%;}.journey-card,.journey-stop:nth-of-type(even) .journey-card{left:24%;width:76%;padding:18px}.journey-node{left:12%}.journey-year,.journey-stop:nth-of-type(even) .journey-year{left:35%;font-size:80px;top:-50px}.journey-start{left:22%}.journey-next{left:12%}.journey-card h3{font-size:21px}.stop-4{top:1150px}}
 @media(prefers-reduced-motion:reduce){.journey-fill-mask{transform:scaleY(1)}.stop-4 .journey-node,.journey-next>span{animation:none}}
+
+/* Staggered blue glass client reviews. */
+.reviews-glass-section { background: #fff9eb; padding: 70px 0 100px; overflow: hidden; }
+.reviews-glass-heading { text-align: center; padding: 0 24px 55px; }
+.reviews-glass-heading > p { color: #92928f; font: 12px/1.5 monospace; letter-spacing: .035em; margin-bottom: 18px; }
+.reviews-glass-heading h2 { font-family: 'PP Neue Montreal', Arial, sans-serif; font-size: clamp(32px, 3.5vw, 52px); font-weight: 500; letter-spacing: -.055em; color: #101010; }
+.reviews-glass-heading h2 span { color: #ff512b; }
+.reviews-glass-heading > small { display: block; margin-top: 14px; color: #ff512b; font: 12px/1.5 monospace; }
+.reviews-glass-window { overflow: hidden; padding: 35px 0 45px; }
+.reviews-glass-track { display: flex; width: max-content; }
+.reviews-glass-group { display: flex; align-items: flex-start; gap: 20px; padding-right: 20px; }
+.review-glass-card { position: relative; isolation: isolate; flex: 0 0 310px; width: 310px; padding: 28px 28px 30px; margin-top: 60px; border: 1px solid rgba(255,255,255,.55); border-radius: 26px; background: linear-gradient(110deg,rgba(111,132,197,.8),rgba(119,148,246,.86)); color: #f5f7ff; box-shadow: inset 0 1px 2px rgba(255,255,255,.55), 0 14px 20px -10px rgba(70,103,205,.45); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+.review-glass-card:nth-child(2) { margin-top: 100px; }
+.review-glass-card:nth-child(3) { margin-top: 100px; }
+.review-glass-card:nth-child(4), .review-glass-card:nth-child(6) { margin-top: 0; }
+.review-glass-card:nth-child(5) { margin-top: 104px; }
+.review-glass-card:first-child { min-height: 310px; background: linear-gradient(90deg,#244ac4 0%,#345fdb 53%,#889eea 55%); padding-bottom: 90px; }
+.review-glass-card:nth-child(6) { background: linear-gradient(90deg,#8195df,#476df5); }
+.review-glass-quote { font-family: 'PP Neue Montreal',Arial,sans-serif; font-size: 15px; line-height: 1.35; letter-spacing: -.015em; }
+.review-glass-author { display: flex; align-items: center; gap: 12px; margin-top: 28px; }
+.review-avatar { display: grid; place-items: center; flex: 0 0 38px; height: 38px; border-radius: 50%; color: #eaf0ff; background: linear-gradient(135deg,#182748,#6689d3); font-size: 12px; }
+.review-glass-author p { font-size: 13px; line-height: 1.3; }
+.review-glass-author small { display: block; max-width: 200px; margin-top: 5px; color: #344c7d; font: 8px/1.5 monospace; letter-spacing: .06em; }
+.reviews-glass-track.is-sliding { animation: reviews-slide 65s linear infinite; }
+.reviews-glass-window:hover .reviews-glass-track, .reviews-glass-window:focus-within .reviews-glass-track { animation-play-state: paused; }
+@keyframes reviews-slide { to { transform: translateX(-50%); } }
+@media(max-width:600px) {
+  .reviews-glass-section { padding: 45px 0 55px; }
+  .review-glass-card { flex-basis: 280px; width: 280px; padding: 26px; }
+  .reviews-glass-group { gap: 18px; padding-right: 18px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .reviews-glass-track.is-sliding { animation: none; }
+  .reviews-glass-window { overflow-x: auto; }
+  .reviews-glass-group[aria-hidden] { display: none; }
+}
