@@ -2659,3 +2659,50 @@ h1, h2, h3, h4, h5, h6, .bento-stat-giant, .card-stat, .stat-num {
   .featured-panel,.featured-panel-image,.featured-panel h3,.featured-panel-detail,.featured-panel-symbol { transition: none; }
   .featured-panel[data-active="true"] .featured-panel-image { transform: none; }
 }
+
+/* Scroll-led service showcase. Static cards remain available without JavaScript. */
+.service-scroll { background: #f5f2ec; color: #141519; padding: 80px 0; }
+.service-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid #cecdc9; margin-bottom: 36px; }
+.service-eyebrow { font-size: 14px; letter-spacing: .14em; color: #656873; margin-bottom: 16px; }
+.service-heading h2 { font-size: clamp(56px, 7.5vw, 112px); letter-spacing: -.065em; line-height: .95; font-weight: 500; }
+.service-heading h2 span { color: #2563eb; }
+.service-total { font-size: clamp(48px, 6vw, 88px); letter-spacing: -.065em; line-height: 1; }
+.service-menu { display: none; }
+.service-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px; }
+.service-panel { min-width: 0; }
+.service-panel img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; margin-bottom: 20px; }
+.service-panel h3 { font-size: 24px; line-height: 1.15; letter-spacing: -.035em; margin-bottom: 12px; }
+.service-panel p { font-size: 16px; line-height: 1.6; color: #545763; margin-bottom: 20px; }
+.service-enquire { display: inline-flex; background: #17181c; color: white; padding: 12px 20px; border-radius: 99px; font-size: 14px; transition: background .2s; }
+.service-enquire:hover { background: #2563eb; }
+.service-select:focus-visible, .service-enquire:focus-visible { outline: 3px solid #2563eb; outline-offset: 5px; }
+@media (min-width: 960px) and (min-height: 720px) {
+  .service-scroll.is-scroll-ready { padding: 0; height: 500vh; }
+  .is-scroll-ready .service-stage { position: sticky; top: 0; height: 100vh; padding-top: max(90px, 11vh); padding-bottom: 32px; display: flex; flex-direction: column; justify-content: center; }
+  .is-scroll-ready .service-heading { flex-shrink: 0; }
+  .is-scroll-ready .service-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 7%; min-height: 0; }
+  .is-scroll-ready .service-menu { display: flex; flex-direction: column; align-self: start; }
+  .service-select { display: grid; grid-template-columns: 70px 1fr; gap: 20px; align-items: baseline; padding: 9px 0; text-align: left; border: 0; background: none; color: #a2a19f; cursor: pointer; font: inherit; font-size: clamp(19px, 2.05vw, 30px); line-height: 1.2; letter-spacing: -.045em; transition: color .25s, transform .25s; }
+  .service-select[aria-pressed="true"] { color: #141519; transform: translateX(5px); }
+  .service-select[aria-pressed="true"] .service-number { color: #2563eb; }
+  .service-select:hover { color: #2563eb; }
+  .service-number { font-size: 20px; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+  .service-scroll-hint { margin-top: 24px; color: #737681; font-size: 14px; }
+  .service-scroll-hint span { color: #2563eb; margin-left: 12px; }
+  .is-scroll-ready .service-panels { display: grid; grid-template-columns: 1fr; align-self: start; }
+  .is-scroll-ready .service-panel { grid-area: 1 / 1; transition: opacity .3s, transform .3s; }
+  .is-scroll-ready .service-panel[aria-hidden="true"] { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; }
+  .is-scroll-ready .service-panel img { max-height: 29vh; object-fit: cover; }
+  .is-scroll-ready .service-panel h3 { font-size: 20px; }
+  .is-scroll-ready .service-panel p { font-size: 16px; line-height: 1.5; margin-bottom: 16px; }
+}
+@media (max-width: 600px) {
+  .service-scroll { padding: 60px 0; }
+  .service-heading { margin-bottom: 28px; padding-bottom: 24px; }
+  .service-eyebrow { font-size: 12px; max-width: 220px; line-height: 1.6; letter-spacing: .1em; }
+  .service-panels { grid-template-columns: 1fr; gap: 44px; }
+  .service-panel { padding-bottom: 28px; border-bottom: 1px solid #cecdc9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-select, .service-panel { transition: none !important; }
+}

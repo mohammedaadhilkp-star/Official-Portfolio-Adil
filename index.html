@@ -25,7 +25,7 @@
   <link rel="preload" as="image" href="assets/hero-background.jpg" type="image/jpeg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/geist-variable.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=33">
+  <link rel="stylesheet" href="css/style.css?v=34">
   <script defer src="js/config.js"></script>
   <script defer src="js/main.js?v=13"></script>
   <script defer src="js/motion.js?v=8"></script>
@@ -348,46 +348,69 @@
       </div>
     </section>
 
-    <section class="growth-services" id="services" aria-labelledby="services-title">
-      <div class="wrap">
-        <div class="growth-services-header">
-          <div><p class="growth-services-eyebrow">SERVICES</p>
-          <h2 id="services-title">Everything I Do,<br>Built Around Your Growth</h2></div>
-          <p class="growth-services-intro"><strong>One Marketer. Every Digital Solution.</strong> — strategy, ads, content and the systems that tie them together.</p>
-        </div>
-        <div class="growth-services-list">
-          <details class="growth-service-row" open>
-            <summary><h3>Performance Marketing</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Meta Ads and Google Ads strategies designed to turn advertising budgets into measurable business growth. I focus on audience targeting, high-converting creatives, campaign optimisation and lead generation.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>Search Engine Optimization (SEO)</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Improve your website’s visibility on Google with strategic SEO. From keyword research and technical SEO to on-page optimisation and link building, I help businesses attract organic traffic worldwide.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>Social Media Marketing (SMM)</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Grow your brand across Instagram, Facebook and other social platforms. From content strategy and creative planning to social media management and audience engagement, I turn social presence into business opportunities.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>Website Development</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Build powerful, responsive and user-friendly websites tailored to your business goals. From modern business websites and e-commerce stores to custom web solutions, I create digital experiences designed to engage visitors and drive conversions.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>SEO / AEO / GEO</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Make your brand discoverable across Google and AI-powered search platforms. I optimise digital content for traditional search engines, answer engines and generative AI platforms to improve online visibility.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>AI Video Creations</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Create engaging AI-powered video content for brands, products and advertising campaigns. From creative concepts and AI visuals to promotional videos and brand storytelling, I bring ideas to life.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>Branding Graphics design</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Create a memorable brand identity with strategic graphic design. From logo concepts and brand identity to social media creatives, advertising designs and marketing materials, I make brands stand out.</p>
-          </details>
-          <details class="growth-service-row">
-            <summary><h3>Motion Graphics &amp; Video Editing</h3><span class="growth-service-toggle" aria-hidden="true"></span></summary>
-            <p class="growth-service-description">Transform ideas into engaging visual stories through professional motion graphics and video editing. I create animated advertisements, promotional videos, product showcases and social media content that capture attention.</p>
-          </details>
+    <section class="service-scroll" id="services" aria-labelledby="services-title">
+      <div class="service-stage wrap">
+        <header class="service-heading"><div><p class="service-eyebrow">ONE MARKETER. EVERY DIGITAL SOLUTION.</p><h2 id="services-title">Services<span>.</span></h2></div><span class="service-total">(08)</span></header>
+        <div class="service-layout">
+          <div class="service-menu" aria-label="Choose a service">              <button class="service-select" type="button" aria-controls="service-panel-0" aria-pressed="true"><span class="service-number">01</span><span>Performance Marketing</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-1" aria-pressed="false"><span class="service-number">02</span><span>Search Engine Optimization (SEO)</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-2" aria-pressed="false"><span class="service-number">03</span><span>Social Media Marketing (SMM)</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-3" aria-pressed="false"><span class="service-number">04</span><span>Website Development</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-4" aria-pressed="false"><span class="service-number">05</span><span>SEO / AEO / GEO</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-5" aria-pressed="false"><span class="service-number">06</span><span>AI Video Creations</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-6" aria-pressed="false"><span class="service-number">07</span><span>Branding Graphics design</span></button>
+              <button class="service-select" type="button" aria-controls="service-panel-7" aria-pressed="false"><span class="service-number">08</span><span>Motion Graphics &amp; Video Editing</span></button>
+            <p class="service-scroll-hint">Scroll to explore <span aria-hidden="true">↓</span></p>
+          </div>
+          <div class="service-panels">              <article class="service-panel" id="service-panel-0" aria-labelledby="service-heading-0">
+                <img src="assets/services/performance.svg" alt="Performance Marketing illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-0">Performance Marketing</h3>
+                <p>Meta Ads and Google Ads strategies designed to turn advertising budgets into measurable business growth. I focus on audience targeting, high-converting creatives, campaign optimisation and lead generation.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk advertising</a>
+              </article>
+              <article class="service-panel" id="service-panel-1" aria-labelledby="service-heading-1">
+                <img src="assets/services/seo.svg" alt="Search Engine Optimization (SEO) illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-1">Search Engine Optimization (SEO)</h3>
+                <p>Improve your website’s visibility on Google with strategic SEO. From keyword research and technical SEO to on-page optimisation and link building, I help businesses attract organic traffic worldwide.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk SEO</a>
+              </article>
+              <article class="service-panel" id="service-panel-2" aria-labelledby="service-heading-2">
+                <img src="assets/services/social.svg" alt="Social Media Marketing (SMM) illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-2">Social Media Marketing (SMM)</h3>
+                <p>Grow your brand across Instagram, Facebook and other social platforms. From content strategy and creative planning to social media management and audience engagement, I turn social presence into business opportunities.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk social media</a>
+              </article>
+              <article class="service-panel" id="service-panel-3" aria-labelledby="service-heading-3">
+                <img src="assets/services/web.svg" alt="Website Development illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-3">Website Development</h3>
+                <p>Build powerful, responsive and user-friendly websites tailored to your business goals. From modern business websites and e-commerce stores to custom web solutions, I create digital experiences designed to engage visitors and drive conversions.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk websites</a>
+              </article>
+              <article class="service-panel" id="service-panel-4" aria-labelledby="service-heading-4">
+                <img src="assets/services/ai-search.svg" alt="SEO / AEO / GEO illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-4">SEO / AEO / GEO</h3>
+                <p>Make your brand discoverable across Google and AI-powered search platforms. I optimise digital content for traditional search engines, answer engines and generative AI platforms to improve online visibility.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk AI search</a>
+              </article>
+              <article class="service-panel" id="service-panel-5" aria-labelledby="service-heading-5">
+                <img src="assets/services/ai-video.svg" alt="AI Video Creations illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-5">AI Video Creations</h3>
+                <p>Create engaging AI-powered video content for brands, products and advertising campaigns. From creative concepts and AI visuals to promotional videos and brand storytelling, I bring ideas to life.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk AI video</a>
+              </article>
+              <article class="service-panel" id="service-panel-6" aria-labelledby="service-heading-6">
+                <img src="assets/services/branding.svg" alt="Branding Graphics design illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-6">Branding Graphics design</h3>
+                <p>Create a memorable brand identity with strategic graphic design. From logo concepts and brand identity to social media creatives, advertising designs and marketing materials, I make brands stand out.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk branding</a>
+              </article>
+              <article class="service-panel" id="service-panel-7" aria-labelledby="service-heading-7">
+                <img src="assets/services/motion.svg" alt="Motion Graphics &amp; Video Editing illustration" width="640" height="480" loading="lazy">
+                <h3 id="service-heading-7">Motion Graphics &amp; Video Editing</h3>
+                <p>Transform ideas into engaging visual stories through professional motion graphics and video editing. I create animated advertisements, promotional videos, product showcases and social media content that capture attention.</p>
+                <a class="service-enquire" href="/contact/">Let’s talk motion</a>
+              </article>
+          </div>
         </div>
       </div>
     </section>
@@ -919,5 +942,6 @@
   <script defer src="js/reviews.js?v=1"></script>
   <script defer src="js/work-gallery.js?v=1"></script>
   <script defer src="js/featured-projects.js?v=1"></script>
+  <script defer src="js/services.js?v=1"></script>
 </body>
 </html>
