@@ -4,7 +4,9 @@ window.PORTFOLIO_CONFIG = {
     email: 'mohammedaadhilkp@gmail.com',
     whatsapp: 'https://wa.me/917736735421',
     instagram: 'https://www.instagram.com/aadhil.l/',
-    linkedin: 'https://www.linkedin.com/in/mohammedadilkp/'
+    linkedin: 'https://www.linkedin.com/in/mohammedadilkp/',
+    x: 'https://x.com/mohdadilkp',
+    behance: 'https://www.behance.net/adil-digitalmarketer'
   }
 };
 
