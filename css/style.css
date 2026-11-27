@@ -2829,3 +2829,33 @@ h1, h2, h3, h4, h5, h6, .bento-stat-giant, .card-stat, .stat-num {
   .header-pill-inner:has(.nav-pill-track.is-open) .brand-pill { color: #fff; }
   .header-pill-inner:has(.nav-pill-track.is-open) .mobile-toggle span { background: #fff; }
 }
+
+/* A quiet pulse for every scheduling button. */
+[data-schedule-call] { align-items: center; gap: 12px; }
+[data-schedule-call] .schedule-call-dot {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: #ef63c9;
+  box-shadow: none;
+}
+.schedule-call-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid #ef63c9;
+  border-radius: inherit;
+  animation: schedule-dot-pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes schedule-dot-pulse {
+  0% { transform: scale(.5); opacity: .65; }
+  80%, 100% { transform: scale(1.5); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .schedule-call-dot::after { animation: none; opacity: .35; }
+}
