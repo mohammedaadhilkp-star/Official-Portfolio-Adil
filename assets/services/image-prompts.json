@@ -1,0 +1,45 @@
+{
+  "tool": "built-in image_gen",
+  "style": "Realistic miniature photography, tactile wood and dark sculptural objects, soft daylight through a blurred office window, muted cream and teal, shallow depth of field, landscape 4:3, no logos or watermarks",
+  "prompts": [
+    {
+      "asset": "seo-photo.jpg",
+      "scene": "Search engine optimization: a realistic miniature team examining a large physical magnifying glass over orderly ascending wooden search-result blocks."
+    },
+    {
+      "asset": "social-photo.jpg",
+      "scene": "Social media marketing: a real miniature creative team around a physical smartphone standing on a desk, with tangible speech bubble props and small audience figures."
+    },
+    {
+      "asset": "web-photo.jpg",
+      "scene": "Website development: miniature designers and builders assembling a large laptop website interface with physical modular panels, on a real wooden desk."
+    },
+    {
+      "asset": "ai-search-photo.jpg",
+      "scene": "SEO AEO GEO: miniature researchers connecting a physical globe, a magnifying glass, and translucent answer cards with delicate lines on a tabletop."
+    },
+    {
+      "asset": "ai-video-photo.jpg",
+      "scene": "AI video creation: miniature film crew around a large cinematic camera and a luminous abstract glass prism on a tabletop."
+    },
+    {
+      "asset": "branding-photo.jpg",
+      "scene": "Branding and graphic design: miniature designers arranging tangible color swatches, blank packaging, typography blocks and stationery on a tabletop."
+    },
+    {
+      "asset": "motion-photo.jpg",
+      "scene": "Motion graphics and video editing: miniature editors working beside a large real editing monitor with abstract colorful timeline tracks and a film reel on a tabletop."
+    }
+  ],
+  "selected_image_edits": {
+    "tool": "built-in image_gen",
+    "social-selected.jpg": "Reproduce first user attachment faithfully; preserve social icons, hand, blue background and composition.",
+    "branding-selected.jpg": "Remove context menu from second user attachment, reconstruct underlying hand, stylus and tablet, preserve photograph and lighting.",
+    "seo-selected.jpg": "Built-in image_gen: faithfully reproduce third attachment with binoculars and search bar reading Make Your Business on Top.",
+    "ai-search-selected.jpg": "Built-in image_gen: faithfully reproduce final attachment of black and silver interlocking AEO GEO SEO puzzle pieces, preserve text and composition.",
+    "web-development-laptop.jpg": "Built-in image_gen: remove bottom-center @focalmediallp text from user attachment, reconstruct desk, and reframe as landscape 4:3 keeping the laptop central and fully visible. Preserve website screen and warm red-black lighting.",
+    "web-development-chickart.jpg": "Built-in image_gen: faithfully reproduce latest Chickart laptop attachment, preserving logo, website content, food, laptop, desk objects and warm lighting; adapt minimally to landscape 4:3 without added text.",
+    "motion-editing-selected.jpg": "Built-in image_gen: faithfully preserve user attachment and adapt to landscape 4:3. Video editing workstation with a curved monitor, editing timeline and floating film graphics. No added text or watermark.",
+    "ai-video-selected.jpg": "Built-in image_gen: faithfully preserve user attachment and adapt to landscape 4:3. Human profile wrapped in colorful filmstrips and digital code representing AI video creation. No added text or watermark."
+  }
+}
